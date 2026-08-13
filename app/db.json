@@ -1,0 +1,61 @@
+{
+  "allTasks": [
+    {
+      "title": "работа с металлом",
+      "price": "900",
+      "address": "михайловск",
+      "description": "отработать с металлом сварить шкаф",
+      "taskNumber": 1,
+      "contaktsModel": {
+        "phoneNumber": "89283099369",
+        "tg": "@sdsthink",
+        "max": "",
+        "wa": ""
+      },
+      "id": "tTAuoAxKVNA"
+    },
+    {
+      "title": "работа с деревом",
+      "price": "550рублей",
+      "address": "Евпатория",
+      "description": "отработать с деревом сделать кучу вырезок, выжигателем в том числе",
+      "taskNumber": 2,
+      "contaktsModel": {
+        "phoneNumber": "5784578478587458",
+        "tg": "SssssTrl",
+        "max": "",
+        "wa": "ww"
+      },
+      "id": "IRNtWTVO3lY"
+    },
+    {
+      "title": "ddd",
+      "price": "ddd",
+      "address": "dd",
+      "description": "ddddfdf",
+      "taskNumber": 3,
+      "contaktsModel": {
+        "phoneNumber": "",
+        "tg": "",
+        "max": "",
+        "wa": ""
+      },
+      "id": "dtDyDFMdwwE"
+    },
+    {
+      "title": "Работа с мойкой",
+      "price": "900Р",
+      "address": "Геленджик, Луначарского 96",
+      "description": "Сделать мойку под высоким  давлением",
+      "taskNumber": 4,
+      "contaktsModel": {
+        "phoneNumber": "89283099369",
+        "tg": "@tort",
+        "max": "@tort",
+        "wa": "@tort"
+      },
+      "id": "MUW8kHBB-KY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
