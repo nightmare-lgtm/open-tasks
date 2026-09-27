@@ -7,6 +7,7 @@ import type { task } from '~/types/tasks';
 
 
 import mapComponent from '~/components/taskNumber/mapComponent.vue';
+import WarningModal from '~/components/generalApp/warningModal.vue';
 
 definePageMeta({
     layout: 'default'
@@ -30,6 +31,8 @@ const {
     }
 )   
 
+//мы передаем заранее для конкретной страницы все задачи сюда
+//и потом используем отдельные ее композеблс для обработки того что нам нужно
 
 const { returnTaskByNumber } = useTaskAbout(allTasks)
 
@@ -50,7 +53,7 @@ console.log(route.params)
 const currentTaskNumber = parseParamsUrl(route.params.taskNumber)
 const currentTask:task | undefined = returnTaskByNumber(currentTaskNumber)
 
-
+const isVisibleConfirm = ref<boolean>(false);
 
 function convertGeocoderCoordinates(coordinates: any) {
   console.log(coordinates.value)
@@ -101,14 +104,19 @@ if(currentTask?.address){
             <span class="order-title-description">Описание: </span>
             <span>{{ currentTask?.description }} </span>
           </h4>
-          <button 
-            class="insomnia-btn btn-connect mt-3"
-            @click="isShowConnectModal= !isShowConnectModal"
+          <div class="card-footer">
+             <button 
+              class="insomnia-btn btn-connect mt-3"
+              @click="isShowConnectModal= !isShowConnectModal"
             >
-            Связаться с заказчиком
-          </button>
+              Связаться с заказчиком
+            </button>
+            <button class="insomnia-btn mt-3" @click="isVisibleConfirm=!isVisibleConfirm">
+              Закрыть задачу
+            </button>
+          </div>
         </div>
-        <div class="col-xl-7 mt-2 map-container">
+        <div class="col-xl-6 mt-2 map-container">
           <client-only>
             <map-component
             :lat="coordinatesTask[1]"
@@ -132,6 +140,10 @@ if(currentTask?.address){
           :currentTask="currentTask"
         />
     </v-dialog>
+
+    <warning-modal
+      v-model="isVisibleConfirm"
+    />
 </template>
 
 <style scoped>
@@ -188,5 +200,12 @@ if(currentTask?.address){
   display: flex;
   justify-content: center;
   align-items: center;
+ 
+}
+
+.card-footer{
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
 }
 </style>

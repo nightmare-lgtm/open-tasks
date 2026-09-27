@@ -3,6 +3,7 @@ import AddTask from '~/components/header/addTask.vue';
 import taskService from '~/services/taskService';
 import type { addTaskModel, createTaskDTO } from '~/types/tasks';
 import { useNotify } from '~/composables/helpers/useNotify';
+import InsomniaSidebar from '~/components/generalApp/insomniaSidebar.vue';
 
 const{createNotify} = useNotify() 
 
@@ -12,7 +13,7 @@ const isShowTaskModal = ref<boolean>(false)
 
 const route = useRoute();
 const $router = useRouter()
-console.log(route)
+
 //пока проверяет есть ли вложенность в виде параметров (пока только генерируемых)
 const hasParams = computed(()=>(Object.keys(route.params).length>0))
 
@@ -61,19 +62,24 @@ function goToBack(){
                 <div class="col-xl-4"></div>
                 <div class="col-xl-4"></div>
                 <div class="col-xl-2">
-                    <Button 
+                    <button 
                         class="insomnia-btn"
                         @click="isShowTaskModal=!isShowTaskModal"
                     >
                     Разместить заказ
-                    </Button>
+                    </button>
                 </div>
             </div>
             <h1 class="main-head text-center"></h1>
         </div>
-        
     </header>
-    <slot></slot>
+    <main>
+        <InsomniaSidebar/>
+        <section>
+            <slot></slot>
+        </section>
+    </main>
+    
     <footer>
         <div class="footer">
            <h1 class="main-head-footer text-center">ВСЕ ПРАВА ЗАЩИЩЕНЫ</h1> 
@@ -97,8 +103,16 @@ function goToBack(){
     padding: 20px;
     background-color:  rgba(72, 79, 88, 0.85);
     box-shadow:0 12px 35px rgba(0, 0, 0, 0.35);
-
 }
+
+main {
+  display: flex;
+}
+
+section{
+  flex:1;
+}
+
 .footer{
     padding: 20px;
     border-radius: 20px;
@@ -121,5 +135,11 @@ function goToBack(){
     border: none;
     color:rgba(0,0,0,0.5);
     border-radius: 8px;
+}
+
+.default-sidebar{
+    background-color: red;
+    width: 20px;
+    height: 20px;
 }
 </style>

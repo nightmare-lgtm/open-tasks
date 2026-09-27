@@ -55,6 +55,20 @@
         "wa": "@tort"
       },
       "id": "MUW8kHBB-KY"
+    },
+    {
+      "title": "кормить собак",
+      "price": "кормить собак",
+      "address": "Кисловодск, Ленина 75",
+      "description": "кормить собак",
+      "taskNumber": 5,
+      "contaktsModel": {
+        "phoneNumber": "кормить собак",
+        "tg": "кормить собак",
+        "max": "кормить собак",
+        "wa": "кормить собак"
+      },
+      "id": "dKAmjefpGno"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

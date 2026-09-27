@@ -33,7 +33,7 @@ function handleClickMore(){
         </h6>
     </div>
     <div class="card-body text-center mt-4">
-        <Button class="insomnia-btn" @click="handleClickMore()">Подробнее</Button>
+        <button class="insomnia-btn" @click="handleClickMore()">Подробнее</button>
     </div>
 
 </div>
