@@ -5,10 +5,13 @@ const isOpen = ref(false)
 <template>
     <aside class="main-sidebar" :class="{openSidebar:isOpen}">
         <div class="sidebar-wrapper">
-          <button @click="isOpen=!isOpen">☰</button>
-          <button>⚙</button>
+          <button @click="isOpen=!isOpen">
+            ☰<span v-show="isOpen">Свернуть</span>
+        </button>
+          <button>
+            ⚙<span v-show="isOpen">Настройки</span>
+        </button>
         </div>
-        
     </aside>
 </template>
 <style scoped>
@@ -19,6 +22,7 @@ const isOpen = ref(false)
     flex-direction: column;
     background: black;
     width: 60px;
+    transition: width 0.3s ease;
 }
 .sidebar-wrapper{
     display: flex;

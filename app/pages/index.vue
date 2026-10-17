@@ -49,8 +49,7 @@ function openCard(taskNumber:number){
 <style scoped>
 .main-page{
     background-color:rgba(47, 52, 58, 0.7);
-    padding: 20px;
-    height: 90vh;
+    padding: 10px 10px 100px 10px;
 }
 .all-users{
     display: flex;

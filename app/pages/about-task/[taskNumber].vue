@@ -206,6 +206,6 @@ if(currentTask?.address){
 .card-footer{
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  width: 25vw;
 }
 </style>

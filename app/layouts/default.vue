@@ -48,43 +48,45 @@ function goToBack(){
 //норм ли практика вызывать из лайаутов компоненты в которых будет crud
 
 <template>
-    <header>
-        <div class="header container-fluid">
-            <div class="row">
-                <div class="col-xl-2">
-                    <button 
-                        class="btn-arrow mt-1" 
-                        v-if="hasParams"
-                        @click="goToBack()">
-                      <v-icon size="30">mdi-arrow-left</v-icon>
-                    </button>
+    <div class="default-layout">
+        <header>
+            <div class="header container-fluid">
+                <div class="row">
+                    <div class="col-xl-2">
+                        <button 
+                            class="btn-arrow mt-1" 
+                            v-if="hasParams"
+                            @click="goToBack()">
+                        <v-icon size="30">mdi-arrow-left</v-icon>
+                        </button>
+                    </div>
+                    <div class="col-xl-4"></div>
+                    <div class="col-xl-4"></div>
+                    <div class="col-xl-2">
+                        <button 
+                            class="insomnia-btn"
+                            @click="isShowTaskModal=!isShowTaskModal"
+                        >
+                        Разместить заказ
+                        </button>
+                    </div>
                 </div>
-                <div class="col-xl-4"></div>
-                <div class="col-xl-4"></div>
-                <div class="col-xl-2">
-                    <button 
-                        class="insomnia-btn"
-                        @click="isShowTaskModal=!isShowTaskModal"
-                    >
-                    Разместить заказ
-                    </button>
-                </div>
+                <h1 class="main-head text-center"></h1>
             </div>
-            <h1 class="main-head text-center"></h1>
-        </div>
-    </header>
-    <main>
-        <InsomniaSidebar/>
-        <section>
-            <slot></slot>
-        </section>
-    </main>
-    
-    <footer>
-        <div class="footer">
-           <h1 class="main-head-footer text-center">ВСЕ ПРАВА ЗАЩИЩЕНЫ</h1> 
-        </div>
+        </header>
+        <main>
+        <InsomniaSidebar class="sidebars"/>
+            <section>
+                <slot></slot>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="footer">
+            <h1 class="main-head-footer text-center">ВСЕ ПРАВА ЗАЩИЩЕНЫ</h1> 
+            </div>
         </footer>
+    </div>
 
         
     <v-dialog 
@@ -99,6 +101,12 @@ function goToBack(){
     </v-dialog>
 </template>
 <style>
+.default-layout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
 .header{
     padding: 20px;
     background-color:  rgba(72, 79, 88, 0.85);
@@ -107,7 +115,9 @@ function goToBack(){
 
 main {
   display: flex;
+  flex:1;
 }
+
 
 section{
   flex:1;
