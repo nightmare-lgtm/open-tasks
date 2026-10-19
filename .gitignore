@@ -1,24 +1,19 @@
-# Nuxt dev/build outputs
-.output
-.data
-.nuxt
-.nitro
-.cache
-dist
+/nuxt-home/node_modules/
+/nuxt-home/.nuxt/
+/nuxt-home/.output/
+/nuxt-home/.data/
+/nuxt-home/.nitro/
+/nuxt-home/.cache/
+/nuxt-home/dist/
+/nuxt-home/.env
+/nuxt-home/.env.*
+!/nuxt-home/.env.example
 
-# Node dependencies
-node_modules
-
-# Logs
-logs
-*.log
-
-# Misc
-.DS_Store
-.fleet
-.idea
-
-# Local env files
-.env
-.env.*
-!.env.example
+/laravel-home/.env
+/laravel-home/.env.*
+!/laravel-home/.env.example
+/laravel-home/vendor/
+/laravel-home/node_modules/
+/laravel-home/public/build/
+/laravel-home/public/hot
+/laravel-home/storage/*.key
