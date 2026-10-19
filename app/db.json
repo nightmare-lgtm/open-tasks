@@ -8,7 +8,7 @@
       "taskNumber": 1,
       "contaktsModel": {
         "phoneNumber": "89283099369",
-        "tg": "@sdsthink",
+        "tg": "@rerter",
         "max": "",
         "wa": ""
       },
@@ -49,7 +49,7 @@
       "description": "Сделать мойку под высоким  давлением",
       "taskNumber": 4,
       "contaktsModel": {
-        "phoneNumber": "89283099369",
+        "phoneNumber": "83494949300",
         "tg": "@tort",
         "max": "@tort",
         "wa": "@tort"
@@ -69,6 +69,48 @@
         "wa": "кормить собак"
       },
       "id": "dKAmjefpGno"
+    },
+    {
+      "title": "НОВЫЙ",
+      "price": "НОВЫЙ",
+      "address": "Воркута, Ленина 45",
+      "description": "НОВЫЙ",
+      "taskNumber": 6,
+      "contaktsModel": {
+        "phoneNumber": "88033333333",
+        "tg": "НОВЫЙ",
+        "max": "НОВЫЙ",
+        "wa": "НОВЫЙ"
+      },
+      "id": "gYFwKKMDYG4"
+    },
+    {
+      "title": "",
+      "price": "",
+      "address": "",
+      "description": "",
+      "taskNumber": 7,
+      "contaktsModel": {
+        "phoneNumber": "",
+        "tg": "",
+        "max": "",
+        "wa": ""
+      },
+      "id": "mq17e5POyXc"
+    },
+    {
+      "title": "работа с водой",
+      "price": "9000Р",
+      "address": "Сочи, винограданая 45",
+      "description": "работа с водой",
+      "taskNumber": 8,
+      "contaktsModel": {
+        "phoneNumber": "828282829",
+        "tg": "828282829",
+        "max": "828282829",
+        "wa": "828282829"
+      },
+      "id": "2OmD__ij3rQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
