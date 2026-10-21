@@ -101,13 +101,13 @@ function goToBack(){
     </v-dialog>
 </template>
 <style>
-.default-layout{
+.default-layout {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     
 }
-.header{
+.header {
     padding: 20px;
     background-color:  rgba(72, 79, 88, 0.85);
     box-shadow:0 12px 35px rgba(0, 0, 0, 0.35);
@@ -117,7 +117,6 @@ main {
   display: flex;
   flex:1;
 }
-
 
 section{
   flex:1;
@@ -134,8 +133,8 @@ section{
     text-shadow: 1px 1px 1px black;
 }
 
-.bloc{
-    background-color: red;
+.bloc {
+  background-color: red;
 }
 
 .btn-arrow {

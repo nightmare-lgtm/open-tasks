@@ -32,7 +32,7 @@ function openCard(taskNumber:number){
 
 <template>
     <div class="main-page">
-        <h4 class="text-center ">Активные объявления</h4>
+        <h4 class="text-center active-task-head mt-3">Активные объявления</h4>
         <div class="card-block mt-4">
             <Card v-for="(titleCard,idx) in allTasks"
                 :name = titleCard.title
@@ -47,16 +47,27 @@ function openCard(taskNumber:number){
 </template>
 
 <style scoped>
-.main-page{
-    background-color:rgba(47, 52, 58, 0.7);
+.main-page {
+  background-color: #20232A;  
     padding: 10px 10px 100px 10px;
 }
-.all-users{
+
+.active-task-head {
+  font-family: 'Oxanium', sans-serif;
+  font-weight: 700; 
+  font-size: 1.5rem; 
+  color: #ffffff; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.9); 
+}
+
+.all-users {
     display: flex;
     background-color: red;
     padding: 400px;
 }
-h4{
+h4 {
    color:rgba(255, 255, 240,1)
 }
 .card-block{
@@ -66,5 +77,4 @@ h4{
 .card-block-title{
   text-align: center;
 }
-
 </style>
