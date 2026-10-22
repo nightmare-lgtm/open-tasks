@@ -83,7 +83,8 @@ function goToBack(){
         
         <footer>
             <div class="footer">
-            <h1 class="main-head-footer text-center">ВСЕ ПРАВА ЗАЩИЩЕНЫ</h1> 
+                <v-icon color="#00f0ff" size="14" class="mr-2">mdi-circle</v-icon>
+                <span>Система активна</span>
             </div>
         </footer>
     </div>
@@ -109,8 +110,11 @@ function goToBack(){
 }
 .header {
     padding: 20px;
-    background-color:  rgba(72, 79, 88, 0.85);
+    background: rgba(26, 26, 34, 0.85);
     box-shadow:0 12px 35px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); 
 }
 
 main {
@@ -123,9 +127,14 @@ section{
 }
 
 .footer{
-    padding: 20px;
-    border-radius: 20px;
-    background-color: #DEB887;
+  background: rgba(26, 26, 34, 0.85); 
+  backdrop-filter: blur(10px); 
+  border-top: 1px solid rgba(0, 240, 255, 0.2);
+  padding: 15px 40px;
+  margin-top: auto;
+  font-family: 'Oxanium', sans-serif;
+  text-align: center;
+  color: #8A8A9E; 
 }
 .main-head-footer{
     font-size: 20px;
@@ -138,12 +147,12 @@ section{
 }
 
 .btn-arrow {
-    background-color: rgba(255, 140, 0,0.7) ;
-    width: 40px;
-    height: 30px;
-    border: none;
-    color:rgba(0,0,0,0.5);
-    border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05); 
+  border: 1px solid rgba(0, 240, 255, 0.3); 
+  color: #00f0ff;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
 }
 
 .default-sidebar{

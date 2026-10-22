@@ -1,14 +1,14 @@
   // https://nuxt.com/docs/api/configuration/nuxt-config
   export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
-    devtools: { enabled: true },
+    devtools: { enabled: false },
     modules: ['@nuxt/image', '@pinia/nuxt', 'vuetify-nuxt-module'],
     css: ['bootstrap/dist/css/bootstrap.min.css',
       '~/assets/scss/global.scss'
     ],
     app:{
           head: {
-        title: 'заказы', // default fallback title
+        title: 'заказы', 
         htmlAttrs: {
           lang: 'en',
         },

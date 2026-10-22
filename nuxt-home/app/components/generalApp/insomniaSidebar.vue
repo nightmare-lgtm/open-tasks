@@ -5,11 +5,13 @@ const isOpen = ref(false)
 <template>
     <aside class="main-sidebar" :class="{openSidebar:isOpen}">
         <div class="sidebar-wrapper">
-          <button @click="isOpen=!isOpen">
-            ☰<span v-show="isOpen">Свернуть</span>
+          <button class="sidebar-btn" @click="isOpen=!isOpen">
+            <v-icon>mdi-menu</v-icon> 
+            <span v-show="isOpen" class="btn-description">Свернуть</span>
         </button>
           <button>
-            ⚙<span v-show="isOpen">Настройки</span>
+            <v-icon>mdi-cog-outline</v-icon>
+            <span v-show="isOpen" class="btn-description">Настройки</span>
         </button>
         </div>
     </aside>
@@ -20,16 +22,27 @@ const isOpen = ref(false)
 .main-sidebar{
     display: flex;
     flex-direction: column;
-    background: black;
+    background: #15151b;
+    border-right: 1px solid rgba(160, 32, 240, 0.3);
     width: 60px;
     transition: width 0.3s ease;
 }
 .sidebar-wrapper{
     display: flex;
     flex-direction: column;
-   button{
+   button {
     margin: 7px;
+    background: transparent; 
+    border: none;
+    color: #8A8A9E; 
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
    }
+}
+
+.btn-description {
+    margin: 5px;
 }
 
 .openSidebar{
