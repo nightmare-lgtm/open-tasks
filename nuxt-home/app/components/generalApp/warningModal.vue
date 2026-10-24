@@ -31,7 +31,7 @@ function closeModal(){
 </template>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Russo+One&family=Share+Tech+Mono&family=Tektur:wght@500;600;700&display=swap');
-.warning-container{
+.warning-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,18 +41,20 @@ function closeModal(){
     inset: 0;
     z-index: 9999;
 }
-.warning-content{
+.warning-content {
   inset: 5;
   position: relative;
   display: flex;
-  padding: 10px;
+  padding: 20px;
   width: min(800px, calc(100vw-40px));
   height: min(400px,100vh - 40px);
   overflow: auto;
   flex-direction: column;
   align-items: center;
-      border:2px solid red;
-    background-color: red;
+  border:1px solid #FF9900;
+  border-radius: 10px;
+  background-color: #2A2015;
+  color:#E0E0E0;
 }
 .warning-footer{
   display: flex;
@@ -60,10 +62,11 @@ function closeModal(){
   width: 100%;
   padding: 10px;
   margin-top: auto;
+  color:black;
 }
 
 .warning-backdrop{
-    position: absolute;
+  position: absolute;
   inset: 0;
   z-index: 0;
   background: rgba(0, 0, 0, 0.35);

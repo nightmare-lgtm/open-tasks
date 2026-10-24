@@ -154,7 +154,7 @@ if(currentTask?.address){
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600&display=swap');
-.main{
+.main {
   background: linear-gradient(135deg,#23272e 0%,#1d2127 50%, #181b20 100%
 );
   padding: 20px;
@@ -162,7 +162,7 @@ if(currentTask?.address){
   color:white;
 }
 
-.order-title{
+.order-title {
     font-family: 'Exo 2', sans-serif;
     font-size: 44px;
     font-weight: 700;
@@ -171,7 +171,7 @@ if(currentTask?.address){
     text-shadow: 0 0 10px rgba(120,220,255,.45);
 }
 
-.order-title-name{
+.order-title-name {
     font-family: 'Russo One', sans-serif;
     font-size: 34px;
     color: rgba(175, 238, 238,1);
@@ -179,12 +179,12 @@ if(currentTask?.address){
     text-shadow: 5px 5px 5px rgba(120,220,255,.18);
 }
 
-.order-title-text{
+.order-title-text {
     font-family:'Exo 2',sans-serif;
     font-size:30px;
 }
 
-.order-title-description{
+.order-title-description {
     font-family:'Orbitron',sans-serif;
     font-size:20px;
     font-weight:500;
@@ -192,20 +192,21 @@ if(currentTask?.address){
     color:#7fd7ff;
 }
 
-.btn-connect{
+.btn-connect {
   color: black !important;
 }
 
-.map-container{
+.map-container {
   display: flex;
   justify-content: center;
   align-items: center;
  
 }
 
-.card-footer{
+.card-footer {
   display: flex;
   justify-content: space-between;
   width: 25vw;
+  color:black;
 }
 </style>

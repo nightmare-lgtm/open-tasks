@@ -3,7 +3,11 @@
     border-radius: 10px;
     background: linear-gradient(90deg, #ff9900, #ff5500);
     box-shadow: 0 0 15px rgba(255, 153, 0, 0.4);
-    padding: 5px;
+    padding: 0.5vw;
     font-weight: 600;
     cursor: pointer;
+}
+
+.insomnia-btn:hover {
+  filter: brightness(0.85); 
 }
