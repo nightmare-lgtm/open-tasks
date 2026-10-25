@@ -44,9 +44,6 @@ function goToBack(){
 }
 
 </script>
-
-//норм ли практика вызывать из лайаутов компоненты в которых будет crud
-
 <template>
     <div class="default-layout">
         <header>

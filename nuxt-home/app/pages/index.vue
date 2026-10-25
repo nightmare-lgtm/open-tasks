@@ -6,12 +6,10 @@ definePageMeta({
 import Card from '~/components/Main/Card.vue'
 import taskService from '../services/taskService'
 import type { task } from '~/types/tasks'
-import { title } from 'node:process'
 
 
 const useTaskService = new taskService()
 
-//нужен ли try catch?
 const {
     data: allTasks,
     error: allTasksError,

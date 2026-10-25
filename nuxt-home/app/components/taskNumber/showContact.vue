@@ -2,7 +2,6 @@
 import taskService from '~/services/taskService';
 import { type contactsModel, type addTaskModel, type task } from '~/types/tasks';
 
-//почему у пропса потом круглые скобки?
 const props = defineProps<{currentTask:task}>()
 
 const contacts = ref<contactsModel>(props.currentTask.contaktsModel)
@@ -34,7 +33,6 @@ function parsePropsContactModel(contact:string){
 
 </script>
 //в будущем бы было интересно сделать онлайн чат между заказчиком и исполнителем
-//поработать с вебхуками
 <template>
     <div class="main">
         <h1 class="modal-title">Связь с заказчиком</h1>
