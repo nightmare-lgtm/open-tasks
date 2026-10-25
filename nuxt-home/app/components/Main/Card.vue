@@ -46,7 +46,6 @@ function handleClickMore(){
 
 .task-card {
     background: #24242e;
-    width: 20vw;
     height: auto;
     margin: 20px;
     padding: 15px;

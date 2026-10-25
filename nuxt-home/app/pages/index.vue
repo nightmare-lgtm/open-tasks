@@ -29,17 +29,27 @@ function openCard(taskNumber:number){
 </script>
 
 <template>
-    <div class="main-page">
-        <h4 class="text-center active-task-head mt-3">Активные объявления</h4>
-        <div class="card-block mt-4">
-            <Card v-for="(titleCard,idx) in allTasks"
-                :name = titleCard.title
-                :count-task="idx+1"
-                :price="titleCard.price"
-                :location = "titleCard.address"
-                :numberTask="titleCard.taskNumber"
-                @request-about="openCard"
-            />
+    <div class="main-page container-fluid">
+        <div class="row">
+            <div class="col-12">
+              <h4 class="text-center active-task-head mt-3">Активные объявления</h4>
+            </div>
+        </div>
+        <div class="row mt-4">
+           <div 
+             v-for="(titleCard, idx) in allTasks" 
+             :key="idx" 
+             class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4" 
+            >
+                <Card
+                    :name="titleCard.title"
+                    :count-task="idx + 1"
+                    :price="titleCard.price"
+                    :location="titleCard.address"
+                    :numberTask="titleCard.taskNumber"
+                    @request-about="openCard"
+                />
+            </div>
         </div>
     </div>
 </template>
@@ -60,17 +70,8 @@ function openCard(taskNumber:number){
   text-shadow: 0 0 15px rgba(0, 240, 255, 0.9); 
 }
 
-.all-users {
-    display: flex;
-    background-color: red;
-    padding: 400px;
-}
 h4 {
    color:rgba(255, 255, 240,1)
-}
-.card-block{
-  display: flex;
-  flex-wrap: wrap;
 }
 .card-block-title{
   text-align: center;
