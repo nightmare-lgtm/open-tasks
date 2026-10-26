@@ -47,28 +47,21 @@ function goToBack(){
 <template>
     <div class="default-layout">
         <header>
-            <div class="header container-fluid">
-                <div class="row">
-                    <div class="col-xl-2">
-                        <button 
-                            class="btn-arrow mt-1" 
-                            v-if="hasParams"
-                            @click="goToBack()">
-                        <v-icon size="30">mdi-arrow-left</v-icon>
-                        </button>
-                    </div>
-                    <div class="col-xl-4"></div>
-                    <div class="col-xl-4"></div>
-                    <div class="col-xl-2">
-                        <button 
-                            class="insomnia-btn"
-                            @click="isShowTaskModal=!isShowTaskModal"
-                        >
-                        Разместить заказ
-                        </button>
-                    </div>
-                </div>
-                <h1 class="main-head text-center"></h1>
+            <div class="header">
+                <button 
+                    class="btn-arrow mt-1" 
+                    v-if="hasParams"
+                    @click="goToBack()"
+                >
+                    <v-icon size="30">mdi-arrow-left</v-icon>
+                </button>
+                   
+                <button 
+                    class="insomnia-btn add-task-btn"
+                    @click="isShowTaskModal=!isShowTaskModal"
+                >
+                    Разместить заказ
+                </button>
             </div>
         </header>
         <main>
@@ -98,7 +91,7 @@ function goToBack(){
           />
     </v-dialog>
 </template>
-<style>
+<style scoped>
 .default-layout {
     display: flex;
     flex-direction: column;
@@ -106,12 +99,15 @@ function goToBack(){
     
 }
 .header {
+    display: flex;
+    align-items:end;
     padding: 20px;
     background: rgba(26, 26, 34, 0.85);
     box-shadow:0 12px 35px rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0, 240, 255, 0.2); 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    justify-content: space-between; 
 }
 
 main {
@@ -119,11 +115,11 @@ main {
   flex:1;
 }
 
-section{
+section {
   flex:1;
 }
 
-.footer{
+.footer {
   background: rgba(26, 26, 34, 0.85); 
   backdrop-filter: blur(10px); 
   border-top: 1px solid rgba(0, 240, 255, 0.2);
@@ -133,14 +129,10 @@ section{
   text-align: center;
   color: #8A8A9E; 
 }
-.main-head-footer{
+.main-head-footer {
     font-size: 20px;
     color:aqua;
     text-shadow: 1px 1px 1px black;
-}
-
-.bloc {
-  background-color: red;
 }
 
 .btn-arrow {

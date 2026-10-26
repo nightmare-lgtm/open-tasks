@@ -206,7 +206,26 @@ if(currentTask?.address){
 .card-footer {
   display: flex;
   justify-content: space-between;
-  width: 25vw;
+  width: 70%;
   color:black;
 }
+@media(max-width:768px){
+  .card-footer{
+    width: 100%;
+    margin-bottom: 40px;
+    flex-direction: column;
+  }
+  .map-container{
+    margin-top: 90px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1040px) {
+  .card-footer{
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+}
+
 </style>

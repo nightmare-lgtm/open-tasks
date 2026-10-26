@@ -30,9 +30,16 @@ onMounted(()=>{
 </template>
 
 <style scoped>
-.map{
-    width:80%;
-    height:400px;
-    border:1px solid red;
+.map {
+    width: 100%;
+    height: 250px;
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+    .map {
+        height: 400px;
+    }
 }
 </style>
