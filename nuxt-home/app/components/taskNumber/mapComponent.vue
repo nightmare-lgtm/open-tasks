@@ -32,7 +32,7 @@ onMounted(()=>{
 <style scoped>
 .map {
     width: 100%;
-    height: 250px;
+    height: 200px;
     border: 1px solid red;
     box-sizing: border-box;
 }

@@ -155,11 +155,11 @@ if(currentTask?.address){
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600&display=swap');
 .main {
-  background: linear-gradient(135deg,#23272e 0%,#1d2127 50%, #181b20 100%
-);
+  background: linear-gradient(135deg,#23272e 0%,#1d2127 50%, #181b20 100%);
   padding: 20px;
   height: 90vh;
   color:white;
+  overflow: auto;
 }
 
 .order-title {

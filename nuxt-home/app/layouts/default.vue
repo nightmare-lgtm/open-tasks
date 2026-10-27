@@ -149,4 +149,9 @@ section {
     width: 20px;
     height: 20px;
 }
+@media(max-width:768px){
+  .header{
+    padding: 5px 10px 5px 10px;
+  }
+}
 </style>
