@@ -1,5 +1,10 @@
 <script setup>
 //разобраться с автоимпортом
+
+//Здесь у нас также находятся все глобальные компоненты
+//Такие как уведомления,модальные окна настроек..
+//глобальные - которые будут использоваться в любой части приложения
+//в т.числе и у всех ролей. Поэтому они не вызываются локально из мест их обработчиков
 import { useNotify } from './composables/helpers/useNotify';
 const {modelNotify} = useNotify()
 </script>
@@ -8,29 +13,29 @@ const {modelNotify} = useNotify()
   <NuxtLayout>
      <NuxtPage/>
      <v-snackbar
-      v-model="modelNotify.isShow"
-      timeout="10000"
-      location="bottom right"
-      class="insomnia-snackbar"
+        v-model="modelNotify.isShow"
+        timeout="10000"
+        location="bottom right"
+        class="insomnia-snackbar"
      >
        <div
-  class="insomnia-notify"
-  :class="`insomnia-notify--${modelNotify.type}`"
->
-  <v-icon class="insomnia-icon">
-    {{ modelNotify.icon }}
-  </v-icon>
+        class="insomnia-notify"
+        :class="`insomnia-notify--${modelNotify.type}`"
+      >
+        <v-icon class="insomnia-icon">
+          {{ modelNotify.icon }}
+        </v-icon>
 
-  <div class="insomnia-content">
-    <div class="insomnia-title">
-      {{ modelNotify.title }}
-    </div>
+        <div class="insomnia-content">
+          <div class="insomnia-title">
+            {{ modelNotify.title }}
+          </div>
 
-    <div class="insomnia-description">
-      {{ modelNotify.description }}
-    </div>
-  </div>
-</div>
+          <div class="insomnia-description">
+            {{ modelNotify.description }}
+          </div>
+        </div>
+      </div>
      </v-snackbar>
   </NuxtLayout>
   </div>

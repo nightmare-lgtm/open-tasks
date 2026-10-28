@@ -1,4 +1,6 @@
 <script setup lang ="ts">
+import SettingsModal from './settingsModal.vue';
+
 const isOpen = ref(false)
 </script>
 

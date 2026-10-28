@@ -206,7 +206,7 @@ if(currentTask?.address){
 .card-footer {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 25vw;
   color:black;
 }
 @media(max-width:768px){
