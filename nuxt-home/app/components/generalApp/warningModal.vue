@@ -42,12 +42,11 @@ function closeModal(){
     z-index: 9999;
 }
 .warning-content {
-  inset: 5;
   position: relative;
   display: flex;
   padding: 20px;
-  width: min(800px, calc(100vw-40px));
-  height: min(400px,100vh - 40px);
+  width: min(800px, calc(100vw- 40px));
+  height: min(400px, calc(100vh - 40px));
   overflow: auto;
   flex-direction: column;
   align-items: center;

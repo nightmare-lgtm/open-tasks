@@ -5,8 +5,12 @@
 //Такие как уведомления,модальные окна настроек..
 //глобальные - которые будут использоваться в любой части приложения
 //в т.числе и у всех ролей. Поэтому они не вызываются локально из мест их обработчиков
+import SettingsModal from './components/generalApp/settingsModal.vue';
 import { useNotify } from './composables/helpers/useNotify';
-const {modelNotify} = useNotify()
+import { useSettingsModal } from './composables/helpers/useSettingsModal';
+
+const { modelNotify } = useNotify()
+const { modelSettings } = useSettingsModal()
 </script>
 <template>
   <div class="global">
@@ -37,6 +41,7 @@ const {modelNotify} = useNotify()
         </div>
       </div>
      </v-snackbar>
+     <SettingsModal v-model="modelSettings"/>
   </NuxtLayout>
   </div>
 </template>

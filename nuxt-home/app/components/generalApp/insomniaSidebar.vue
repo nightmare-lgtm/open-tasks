@@ -1,7 +1,9 @@
 <script setup lang ="ts">
-import SettingsModal from './settingsModal.vue';
+import { useSettingsModal } from '~/composables/helpers/useSettingsModal';
+
 
 const isOpen = ref(false)
+const { changeModelSettings } = useSettingsModal()
 </script>
 
 <template>
@@ -11,7 +13,7 @@ const isOpen = ref(false)
             <v-icon v-show="!isOpen">mdi-menu</v-icon> 
             <span v-show="isOpen" class="btn-description">Свернуть</span>
         </button>
-          <button>
+          <button @click="changeModelSettings()">
             <v-icon v-show="!isOpen">mdi-cog-outline</v-icon>
             <span v-show="isOpen" class="btn-description">Настройки</span>
         </button>
@@ -21,7 +23,7 @@ const isOpen = ref(false)
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Russo+One&family=Share+Tech+Mono&family=Tektur:wght@500;600;700&display=swap');
 
-.main-sidebar{
+.main-sidebar {
     display: flex;
     flex-direction: column;
     background: #15151b;
@@ -29,7 +31,7 @@ const isOpen = ref(false)
     width: 60px;
     transition: width 0.3s ease;
 }
-.sidebar-wrapper{
+.sidebar-wrapper {
     display: flex;
     flex-direction: column;
    button {
