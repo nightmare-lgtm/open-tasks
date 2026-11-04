@@ -1,0 +1,12 @@
+{
+    "mainPage":{
+        "activeTask":"Активные объявления"
+    },
+    "taskCard": {
+        "taskNumber": "Заказ №",
+        "taskPayment": "Оплата:",
+        "taskLocation": "Локация:",
+        "taskMore": "Подробнее:"
+    }
+    
+}

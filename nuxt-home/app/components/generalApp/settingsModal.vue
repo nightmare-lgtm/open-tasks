@@ -1,4 +1,6 @@
 <script setup lang ="ts">
+const { locale, setLocale } = useI18n()
+
 const props = defineProps<{
   modelValue: boolean
 }>()
@@ -6,9 +8,6 @@ const props = defineProps<{
 const emit = defineEmits<{
    'update:modelValue': [value:boolean]
 }>()
-
-const currentLang = ref("ru")
-
 
 function closeModal(){
   emit('update:modelValue',false)
@@ -30,8 +29,20 @@ function closeModal(){
         <div class="list-lang">
           <!-- сейчас руками добавляю, но для масштабирования лучше список языков 
           и цикл перебора по нему -->
-          <button class="lang-btn" :class="{activeBtnLang: currentLang === 'ru'}">Русский</button>
-          <button class="lang-btn">Английский</button>
+          <button 
+            class="lang-btn"
+            :class="{activeBtnLang: locale === 'ru'}"
+            @click="setLocale('ru')"
+          >
+            Русский
+          </button>
+          <button 
+            class="lang-btn"
+            :class="{activeBtnLang: locale === 'en'}"
+            @click="setLocale('en')"
+            >
+            Английский
+          </button>
           <button class="lang-btn">Казахский</button>
           <button class="lang-btn">Сербский</button>
         </div>

@@ -1,4 +1,5 @@
 <script setup lang ="ts">
+const {t} = useI18n()
 const props = defineProps<{
     name: string,
     countTask: number,
@@ -20,20 +21,20 @@ function handleClickMore(){
 
 <template>
 <div class="task-card">
-    <h4 class="text-center">Заказ № {{ props.numberTask }} </h4>
+    <h4 class="text-center">{{ t('taskCard.taskNumber') + props.numberTask }} </h4>
     <div class="card-title">
         <h6 class="text-center main-head">{{ props.name }}</h6>
         <h6 class="text-center"> 
             <v-icon class="pin-ico mb-2">mdi-pin</v-icon>
-            <span class="bold"> Оплата:</span> {{ props.price }}
+            <span class="bold"> {{ t('taskCard.taskPayment') }}</span> {{ props.price }}
         </h6>
         <h6 class="text-center">
             <v-icon class="pin-ico mb-2">mdi-pin</v-icon>
-            <span class="bold">Локация:</span> {{ props.location }}
+            <span class="bold">{{ t('taskCard.taskLocation') }}</span> {{ props.location }}
         </h6>
     </div>
     <div class="card-body text-center mt-4">
-        <button class="insomnia-btn" @click="handleClickMore()">Подробнее</button>
+        <button class="insomnia-btn" @click="handleClickMore()">{{t('taskCard.taskMore')}}</button>
     </div>
 
 </div>

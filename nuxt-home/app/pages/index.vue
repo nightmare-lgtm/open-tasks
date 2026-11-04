@@ -1,4 +1,5 @@
 <script  setup lang="ts">
+const { t } = useI18n()
 definePageMeta({
     layout: 'default'
 })
@@ -32,7 +33,7 @@ function openCard(taskNumber:number){
     <div class="main-page container-fluid">
         <div class="row">
             <div class="col-12">
-              <h4 class="text-center active-task-head mt-3">Активные объявления</h4>
+              <h4 class="text-center active-task-head mt-3">{{ t('mainPage.activeTask') }}</h4>
             </div>
         </div>
         <div class="row mt-4">

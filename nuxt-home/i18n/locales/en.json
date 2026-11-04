@@ -1,0 +1,11 @@
+{
+    "mainPage":{
+        "activeTask":"Active Task"
+    },
+     "taskCard": {
+        "taskNumber": "Order №",
+        "taskPayment": "Payment:",
+        "taskLocation": "Location:",
+        "taskMore": "More:"
+    }
+}

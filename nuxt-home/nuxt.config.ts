@@ -28,11 +28,11 @@ export default defineNuxtConfig({
 },
 i18n: {
     defaultLocale: 'ru', 
-    // locales: [
-    //   { code: 'ru', name: 'Русский', file: 'ru.json' },
-    //   { code: 'en', name: 'English', file: 'en.json' },
-    //   { code: 'kz', name: 'Қазақша', file: 'kz.json' }
-    // ],
+     locales: [
+       { code: 'ru', name: 'Русский', file: 'ru.json' },
+       { code: 'en', name: 'English', file: 'en.json' },
+      //  { code: 'kz', name: 'Қазақша', file: 'kz.json' }
+     ],
   },
 
   // nitro: {
