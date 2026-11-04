@@ -5,7 +5,8 @@ import type { addTaskModel, createTaskDTO } from '~/types/tasks';
 import { useNotify } from '~/composables/helpers/useNotify';
 import InsomniaSidebar from '~/components/generalApp/insomniaSidebar.vue';
 
-const{createNotify} = useNotify() 
+const{ createNotify } = useNotify() 
+const {t} = useI18n()
 
 const useTaskService = new taskService()
 
@@ -60,7 +61,7 @@ function goToBack(){
                     class="insomnia-btn add-task-btn"
                     @click="isShowTaskModal=!isShowTaskModal"
                 >
-                    Разместить заказ
+                    {{ t('defaultLayout.btnTitles.placeOrder') }}
                 </button>
             </div>
         </header>
@@ -74,7 +75,7 @@ function goToBack(){
         <footer>
             <div class="footer">
                 <v-icon color="#00f0ff" size="14" class="mr-2">mdi-circle</v-icon>
-                <span>Система активна</span>
+                <span>{{ t('defaultLayout.systemActive') }}</span>
             </div>
         </footer>
     </div>

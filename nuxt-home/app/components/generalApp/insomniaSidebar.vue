@@ -1,6 +1,6 @@
 <script setup lang ="ts">
 import { useSettingsModal } from '~/composables/helpers/useSettingsModal';
-
+const {t} = useI18n()
 
 const isOpen = ref(false)
 const { changeModelSettings } = useSettingsModal()
@@ -11,11 +11,11 @@ const { changeModelSettings } = useSettingsModal()
         <div class="sidebar-wrapper">
           <button class="sidebar-btn" @click="isOpen=!isOpen">
             <v-icon v-show="!isOpen">mdi-menu</v-icon> 
-            <span v-show="isOpen" class="btn-description">Свернуть</span>
+            <span v-show="isOpen" class="btn-description">{{ t('sidebar.btnTitles.rollUp') }}</span>
         </button>
           <button @click="changeModelSettings()">
             <v-icon v-show="!isOpen">mdi-cog-outline</v-icon>
-            <span v-show="isOpen" class="btn-description">Настройки</span>
+            <span v-show="isOpen" class="btn-description">{{ t('sidebar.btnTitles.settingsBtn') }}</span>
         </button>
         </div>
     </aside>

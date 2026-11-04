@@ -4,8 +4,51 @@
     },
      "taskCard": {
         "taskNumber": "Order №",
-        "taskPayment": "Payment:",
-        "taskLocation": "Location:",
-        "taskMore": "More:"
+        "taskPayment": "Payment: ",
+        "taskLocation": "Location: ",
+        "taskMore": "More: "
+    },
+      "aboutTask": {
+        "taskName": "Title: ",
+        "taskDescription": "Description: ",
+        "btnTitles":{
+            "contactCustomer": "Contact the customer",
+            "closeTask": "Close the task"
+        }
+    },
+     "sidebar": {
+        "btnTitles": {
+            "rollUp": "Roll up",
+            "settingsBtn": "Settings"
+        }
+    },
+    "defaultLayout": {
+        "btnTitles": {
+          "placeOrder": "Place an order"
+        },
+         "systemActive": "The system is active"
+    },
+    "contactModal": {
+        "title": "Contact the customer",
+        "subtitle": "You can contact the customer using the contacts they left",
+        "customer": "Customer: ",
+        "phone": "Phone number: ",
+        "telegram": "Telegram: ",
+        "max": "MAX: ",
+        "whatsapp": "WhatsApp: "
+    },
+     "addTask": {
+        "addTaskTitle": "Placing an order",
+        "status": "Status: Step {current} of {total}",
+        "informationTask": "Information about task",
+        "contactInformation": "Contact information",
+        "taskName": "Name of task",
+        "description": "Detailed description",
+         "btnTitles": {
+            "back": "Back",
+            "create": "Create",
+            "next": "Further"
+        }
+        
     }
 }

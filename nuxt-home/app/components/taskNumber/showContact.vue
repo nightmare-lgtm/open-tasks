@@ -2,7 +2,9 @@
 import taskService from '~/services/taskService';
 import { type contactsModel, type addTaskModel, type task } from '~/types/tasks';
 
+const {t} = useI18n()
 const props = defineProps<{currentTask:task}>()
+
 
 const contacts = ref<contactsModel>(props.currentTask.contaktsModel)
 console.log(contacts.value)
@@ -35,39 +37,40 @@ function parsePropsContactModel(contact:string){
 //в будущем бы было интересно сделать онлайн чат между заказчиком и исполнителем
 <template>
     <div class="main">
-        <h1 class="modal-title">Связь с заказчиком</h1>
+        <h1 class="modal-title">{{ $t('contactModal.title') }}</h1>
         
-          <h4 class="text-сenter mt-2 modal-head">Вы можете связаться с заказчиком через оставленные им контакты</h4>
+          <h4 class="text-сenter mt-2 modal-head">
+             {{ $t('contactModal.subtitle') }}
+          </h4>
           <div class="connet-container mt-4">
-            <h1 class="order-title mb-4 text-start">Заказчик:</h1>
+             <h1 class="order-title mb-4 text-start">
+              {{ $t('contactModal.customer') }}
+            </h1>
             <h4 class="text-start">
-            <v-icon class="info-icon pr-2">mdi-map-marker</v-icon>
-            <span class="order-title-description">Номер телефона: </span> 
+            <v-icon class="info-icon pr-3">mdi-phone</v-icon>
+                    <span class="order-title-description">
+                      {{ $t('contactModal.phone') }} 
+                    </span> 
             <span>{{ parsePropsContactModel(contacts.phoneNumber) }}</span>
           </h4>
           <h4 class="text-start">
-            <v-icon class="info-icon pr-2">mdi-map-marker</v-icon>
-            <span class="order-title-description">Телеграмм: </span> 
+            <v-icon class="info-icon pr-3">mdi-send</v-icon>
+            <span class="order-title-description">{{ $t('contactModal.telegram') }} </span> 
             <span>{{ parsePropsContactModel(contacts.tg) }}</span>
           </h4>
           <h4 class="text-start">
-            <v-icon class="info-icon pr-2">mdi-map-marker</v-icon>
-            <span class="order-title-description">MAX: </span> 
+            <v-icon class="info-icon pr-3">mdi-message-text</v-icon>
+            <span class="order-title-description">{{ $t('contactModal.max') }}  </span> 
             <span>{{ parsePropsContactModel(contacts.max) }}</span>
           </h4>
           <h4 class="text-start">
-            <v-icon class="info-icon pr-2">mdi-map-marker</v-icon>
-            <span class="order-title-description">WatsApp </span> 
+            <v-icon class="info-icon pr-3">mdi-whatsapp</v-icon>
+            <span class="order-title-description">{{ $t('contactModal.whatsapp') }} </span> 
             <span>@{{ parsePropsContactModel(contacts.wa) }}</span>
           </h4>
           </div>
-          
-        <!-- <div class="modal-footer mt-4">
-          <button class="btn-local btn-cansell" @click="closeModalTask()">Отменить</button>
-          <button class="insomnia-btn btn-local" @click="addTask">Создать</button>
-        </div> -->
+          <!-- TODO: сделать цвета у иконок -->
     </div>
-
 </template>
 
 <style scoped>
@@ -120,6 +123,10 @@ function parsePropsContactModel(contact:string){
 .modal-title{
  font-family: 'Tektur', sans-serif;
  color:#DA70D6;
+}
+
+.info-icon {
+  font-size: 1.9rem;
 }
 
 /* .modal-footer{

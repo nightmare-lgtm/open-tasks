@@ -4,9 +4,52 @@
     },
     "taskCard": {
         "taskNumber": "Заказ №",
-        "taskPayment": "Оплата:",
-        "taskLocation": "Локация:",
-        "taskMore": "Подробнее:"
+        "taskPayment": "Оплата: ",
+        "taskLocation": "Локация: ",
+        "taskMore": "Подробнее: "
+    },
+    "aboutTask": {
+        "taskName": "Название ",
+        "taskDescription": "Описание: ",
+        "btnTitles":{
+            "contactCustomer": "Связаться с заказчиком",
+            "closeTask": "Закрыть задачу"
+        }
+    },
+    "sidebar": {
+        "btnTitles": {
+            "rollUp": "Свернуть",
+            "settingsBtn": "Настройки"
+        }
+    },
+
+     "defaultLayout": {
+        "btnTitles": {
+          "placeOrder": "Разместить заказ"
+        },
+        "systemActive": "Система активна"
+    },
+    "contactModal": {
+        "title": "Связь с заказчиком",
+        "subtitle": "Вы можете связаться с заказчиком через оставленные им контакты",
+        "customer": "Заказчик: ",
+        "phone": "Номер телефона: ",
+        "telegram": "Телеграмм: ",
+        "max": "MAX:",
+        "whatsapp": "WatsApp: "
+    },
+    "addTask": {
+        "addTaskTitle": "Размешение заказа",
+        "status": "Статус : Шаг {current} из {total}",
+        "informationTask": "Информация о задаче",
+        "contactInformation": "Контактная информация",
+        "taskName": "Название заказа",
+        "description": "Подробное описание",
+        "btnTitles": {
+            "back": "Назад",
+            "create": "Создать",
+            "next": "Далее"
+        }
+        
     }
-    
 }

@@ -13,6 +13,8 @@ definePageMeta({
     layout: 'default'
 })
 
+const {t} = useI18n()
+
 const useTaskService = new taskService()
 const useGeoCoderService = new GeoCoder()
 const route = useRoute()
@@ -84,24 +86,24 @@ if(currentTask?.address){
       <div class="row">
         <div class="col-xl-5">
       
-          <h1 class="order-title mb-4">Заказ №{{ currentTask?.taskNumber }}</h1>
+          <h1 class="order-title mb-4">{{ t('taskCard.taskNumber') + currentTask?.taskNumber }}</h1>
           <h3>
-            <span class="order-title-name mt-0">Название: </span>
+            <span class="order-title-name mt-0">{{ t('aboutTask.taskName') }} </span>
             <span class="order-title-text">{{ currentTask?.title }}</span>
           </h3>
           <h4>
             <v-icon class="info-icon pr-2">mdi-cash</v-icon>
-            <span class="order-title-description">Оплата: </span>
+            <span class="order-title-description">{{ t('taskCard.taskPayment') }} </span>
             <span>{{ currentTask?.price }} </span>
           </h4>
           <h4>
             <v-icon class="info-icon pr-2">mdi-map-marker</v-icon>
-            <span class="order-title-description">Локация: </span> 
+            <span class="order-title-description">{{ t('taskCard.taskLocation') }} </span> 
             <span>{{ currentTask?.address }}</span>
           </h4>
           <h4>
             <v-icon class="info-icon pr-2">mdi-text-box-outline</v-icon>
-            <span class="order-title-description">Описание: </span>
+            <span class="order-title-description">{{ t('aboutTask.taskDescription') }} </span>
             <span>{{ currentTask?.description }} </span>
           </h4>
           <div class="card-footer">
@@ -109,18 +111,18 @@ if(currentTask?.address){
               class="insomnia-btn btn-connect mt-3"
               @click="isShowConnectModal= !isShowConnectModal"
             >
-              Связаться с заказчиком
+              {{ t('aboutTask.btnTitles.contactCustomer') }}
             </button>
             <button class="insomnia-btn mt-3" @click="isVisibleConfirm=!isVisibleConfirm">
-              Закрыть задачу
+               {{ t('aboutTask.btnTitles.closeTask') }}
             </button>
           </div>
         </div>
         <div class="col-xl-6 mt-2 map-container">
           <client-only>
             <map-component
-            :lat="coordinatesTask[1]"
-              :long="coordinatesTask[0]"
+            :lat="Number(coordinatesTask[1])"
+              :long="Number(coordinatesTask[0])"
             >
             </map-component>
           </client-only>

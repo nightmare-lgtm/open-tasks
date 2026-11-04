@@ -2,6 +2,7 @@
 import taskService from '~/services/taskService';
 import type { addTaskModel, contactsModel, task } from '~/types/tasks';
 
+const {t} = useI18n()
 const useTaskService = new taskService()
 
 const step = ref(0)
@@ -56,7 +57,7 @@ function addTask(){
         <div class="row">
           <div class="col-xl-11">
             <div class="stepper-title">
-              <h1 class="modal-title">Размещение заказа</h1>
+              <h1 class="modal-title">{{ t('addTask.addTaskTitle') }}</h1>
             </div>
           </div>
           <div class="col-xl-1">
@@ -67,13 +68,13 @@ function addTask(){
         </div>
 
       <div class="stepper-status">
-        Статус : Шаг {{ step + 1 }} из 2
+         {{ $t('addTask.status', { current: step + 1, total: 2 }) }}
       </div>
 
       <div class="stepper-description">
         {{ step === 0
-            ? 'Информация о задаче'
-            : 'Контактная информация'
+            ? t('addTask.informationTask')
+            : t('addTask.contactInformation')
         }}
       </div>
 
@@ -87,38 +88,38 @@ function addTask(){
     </div>
     <div v-if="step===0">
         <div class="add-task-container">
-          <h4 class="text-start mt-2">Название заказа</h4>
+          <h4 class="text-start mt-2">{{ t('addTask.taskName') }}</h4>
           <input type="text" class="add-task-input" v-model="dataAddTaskModel.nameTask">
-          <h4 class="text-start mt-2">Оплата</h4>
+          <h4 class="text-start mt-2">{{ t('taskCard.taskPayment') }}</h4>
           <input type="text" class="add-task-input" v-model="dataAddTaskModel.priceTask">
-          <h4 class="text-start mt-2">Локация</h4>
+          <h4 class="text-start mt-2">{{ t('taskCard.taskLocation') }}</h4>
           <input type="text" class="add-task-input" v-model="dataAddTaskModel.locationTask">
-          <h4 class="text-start mt-2">Подробное описание</h4>
+          <h4 class="text-start mt-2">{{ t('addTask.description') }}</h4>
           <textarea class="add-task-textarea" v-model="dataAddTaskModel.descriptionTask"></textarea>
         </div>
         <div class="row modal-footer mt-4">
           <div class="col-xl-7 col-lg-0 col-sm-12"></div>
           <div class="col-xl-5 col-lg-12 col-sm-12">
-            <button class="insomnia-btn btn-local" @click="step=1">Далее</button>
+            <button class="insomnia-btn btn-local" @click="step=1">{{t('addTask.btnTitles.next')}}</button>
           </div>
         </div> 
     </div>
     
       <div v-if="step===1">
         <div class="add-task-container">
-           <h4 class="text-start mt-2">Номер телефона</h4>
+           <h4 class="text-start mt-2">{{ t('contactModal.phone') }}</h4>
            <input type="text" class="add-task-input" v-model="contaktsModel.phoneNumber">
-           <h4 class="text-start mt-2">Телеграмм</h4>
+           <h4 class="text-start mt-2">{{ t('contactModal.telegram') }}</h4>
            <input type="text" class="add-task-input" v-model="contaktsModel.tg">
-           <h4 class="text-start mt-2">MAX</h4>
+           <h4 class="text-start mt-2">{{ t('contactModal.max') }}</h4>
            <input type="text" class="add-task-input" v-model="contaktsModel.max">
-           <h4 class="text-start mt-2">WatshApp</h4>
+           <h4 class="text-start mt-2">{{ t('contactModal.whatsapp') }}</h4>
            <input type="text" class="add-task-input" v-model="contaktsModel.wa">
         </div>
           
         <div class="modal-footer mt-4 ">
-          <button class="btn-local btn-cansell " @click="step=0">Назад</button>
-          <button class="insomnia-btn btn-local" @click="addTask">Создать</button>
+          <button class="btn-local btn-cansell " @click="step=0">{{t('addTask.btnTitles.back')}}</button>
+          <button class="insomnia-btn btn-local" @click="addTask">{{t('addTask.btnTitles.create')}}</button>
         </div>
     </div>
     </div>
