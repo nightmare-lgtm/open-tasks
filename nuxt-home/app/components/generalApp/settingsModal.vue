@@ -1,5 +1,5 @@
 <script setup lang ="ts">
-const { locale, setLocale } = useI18n()
+const { locale, setLocale, t } = useI18n()
 
 const props = defineProps<{
   modelValue: boolean
@@ -20,12 +20,12 @@ function closeModal(){
   <div class="settings-backdrop"></div>
   <div class="settings-content">
     <div class="settings-content-header">
-      <h1 class="main-header">Настройки</h1>
+      <h1 class="main-header">{{ t('settings.settingsTitle') }}</h1>
       <button class="close-btn" @click="closeModal">Х</button>
     </div>
     <div class="main-section mt-4">
       <details>
-        <summary class="lang-summary">Язык</summary>
+        <summary class="lang-summary">{{t('settings.btnTitles.Language')}}</summary>
         <div class="list-lang">
           <!-- сейчас руками добавляю, но для масштабирования лучше список языков 
           и цикл перебора по нему -->
@@ -34,19 +34,35 @@ function closeModal(){
             :class="{activeBtnLang: locale === 'ru'}"
             @click="setLocale('ru')"
           >
-            Русский
+            <span class="fi fi-ru icon-country"></span>
+            <span class="p-1">Русский</span>
           </button>
           <button 
             class="lang-btn"
             :class="{activeBtnLang: locale === 'en'}"
             @click="setLocale('en')"
             >
-            Английский
+            <span class="fi fi-gb icon-country"></span>
+            <span class="p-1">English</span>
           </button>
-          <button class="lang-btn">Казахский</button>
-          <button class="lang-btn">Сербский</button>
+          <button
+            class="lang-btn"
+            :class="{activeBtnLang: locale === 'kk-Latn'}"
+            @click="setLocale('kk-Latn')"
+           >
+          <span class="fi fi-kz icon-country"></span>
+          <span class="p-1">Qazaqşa</span>
+          </button>
+          <button 
+            class="lang-btn"
+            :class="{activeBtnLang: locale === 'sr-Cyrl'}"
+            @click="setLocale('sr-Cyrl')"
+            
+          >
+          <span class="fi fi-rs icon-country"></span>
+          <span class="p-1">Српски</span>
+          </button>
         </div>
-  
       </details>
     </div>
 
@@ -136,6 +152,10 @@ function closeModal(){
 
 .activeBtnLang {
   background-color: orange;
+}
+
+.icon-country {
+  font-size: 0.8rem;
 }
 
 </style>

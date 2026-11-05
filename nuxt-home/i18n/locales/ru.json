@@ -50,6 +50,11 @@
             "create": "Создать",
             "next": "Далее"
         }
-        
+    },
+    "settings": {
+        "settingsTitle": "Настройки",
+        "btnTitles": {
+            "Language": "Язык"
+        }
     }
 }

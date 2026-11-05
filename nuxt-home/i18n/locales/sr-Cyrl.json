@@ -1,0 +1,59 @@
+{
+    "mainPage": {
+        "activeTask": "Активни огласи"
+    },
+    "taskCard": {
+        "taskNumber": "Поруџбина №",
+        "taskPayment": "Плаћање: ",
+        "taskLocation": "Локација: ",
+        "taskMore": "Детаљније: "
+    },
+    "aboutTask": {
+        "taskName": "Назив: ",
+        "taskDescription": "Опис: ",
+        "btnTitles": {
+            "contactCustomer": "Контактирајте наручиоца",
+            "closeTask": "Затворите задатак"
+        }
+    },
+    "sidebar": {
+        "btnTitles": {
+            "rollUp": "Скупи",
+            "settingsBtn": "Подешавања"
+        }
+    },
+    "defaultLayout": {
+        "btnTitles": {
+            "placeOrder": "Поставите поруџбину"
+        },
+        "systemActive": "Систем је активан"
+    },
+    "contactModal": {
+        "title": "Контакт са наручиоцем",
+        "subtitle": "Можете контактирати наручиоца преко контаката које је оставио",
+        "customer": "Наручилац: ",
+        "phone": "Број телефона: ",
+        "telegram": "Телеграм: ",
+        "max": "MAX: ",
+        "whatsapp": "WhatsApp: "
+    },
+    "addTask": {
+        "addTaskTitle": "Постављање поруџбине",
+        "status": "Статус: Корак {current} од {total}",
+        "informationTask": "Информације о задатку",
+        "contactInformation": "Контакт информације",
+        "taskName": "Назив задатка",
+        "description": "Детаљан опис",
+        "btnTitles": {
+            "back": "Назад",
+            "create": "Креирај",
+            "next": "Даље"
+        }
+    },
+    "settings": {
+        "settingsTitle": "Подешавања",
+        "btnTitles": {
+            "Language": "Језик"
+        }
+    }
+}

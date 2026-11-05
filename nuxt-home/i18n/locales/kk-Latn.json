@@ -1,0 +1,59 @@
+{
+    "mainPage": {
+        "activeTask": "Belsendi habarlamalar"
+    },
+    "taskCard": {
+        "taskNumber": "Tapsyrys №",
+        "taskPayment": "Tölem: ",
+        "taskLocation": "Ornalasuy: ",
+        "taskMore": "Tolyğyraq: "
+    },
+    "aboutTask": {
+        "taskName": "Atauy: ",
+        "taskDescription": "Sippattamasy: ",
+        "btnTitles": {
+            "contactCustomer": "Tapsyrys beruwşimen baylanysuw",
+            "closeTask": "Tapsyrysty jabuw"
+        }
+    },
+    "sidebar": {
+        "btnTitles": {
+            "rollUp": "Jyiyrqw",
+            "settingsBtn": "Parametrler"
+        }
+    },
+    "defaultLayout": {
+        "btnTitles": {
+            "placeOrder": "Tapsyrys beruw"
+        },
+        "systemActive": "Jüye belsendi"
+    },
+    "contactModal": {
+        "title": "Tapsyrys beruwşimen baylanys",
+        "subtitle": "Tapsyrys beruwşimen ol qaldyrğan baylanys aqparat arqyly baylanysa alasyz",
+        "customer": "Tapsyrys beruwşi: ",
+        "phone": "Telefon nömiri: ",
+        "telegram": "Telegram: ",
+        "max": "MAX: ",
+        "whatsapp": "WhatsApp: "
+    },
+    "addTask": {
+        "addTaskTitle": "Tapsyrys beruw",
+        "status": "Küy: {current}-qadam, {total}-dan",
+        "informationTask": "Tapsyrys twraly aqparat",
+        "contactInformation": "Baylanys aqparaty",
+        "taskName": "Tapsyrys atawy",
+        "description": "Tolyq sippattamasy",
+        "btnTitles": {
+            "back": "Artqa",
+            "create": "Quruw",
+            "next": "Kelesi"
+        }
+    },
+    "settings": {
+        "settingsTitle": "Parametrler",
+        "btnTitles": {
+            "Language": "Til"
+        }
+    }
+}

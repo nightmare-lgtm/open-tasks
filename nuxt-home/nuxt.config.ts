@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: ['@nuxt/image', '@pinia/nuxt', 'vuetify-nuxt-module', '@nuxtjs/i18n'],
   css: ['bootstrap/dist/css/bootstrap.min.css',
+    'flag-icons/css/flag-icons.min.css',
     '~/assets/scss/global.scss'
   ],
   app:{
@@ -28,13 +29,15 @@ export default defineNuxtConfig({
 },
 i18n: {
   //пока пришлось отключить, т.к есть баг с переключением языка при переходах по страницам
-    defaultLocale: 'false', 
+    defaultLocale: 'ru', 
+    detectBrowserLanguage: false,
+    strategy: 'no_prefix', 
      locales: [
        { code: 'ru', name: 'Русский', file: 'ru.json' },
        { code: 'en', name: 'English', file: 'en.json' },
-      //  { code: 'kz', name: 'Қазақша', file: 'kz.json' }
+       { code: 'kk-Latn', name: 'Qazaqşa', file: 'kk-latn.json' },
+       { code: 'sr-Cyrl', name: 'Српски', file: 'sr-Cyrl.json' }
      ],
-// 
   },
 
   // nitro: {
