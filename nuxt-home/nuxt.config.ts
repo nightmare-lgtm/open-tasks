@@ -35,7 +35,7 @@ i18n: {
      locales: [
        { code: 'ru', name: 'Русский', file: 'ru.json' },
        { code: 'en', name: 'English', file: 'en.json' },
-       { code: 'kk-Latn', name: 'Qazaqşa', file: 'kk-latn.json' },
+       { code: 'kk-Latn', name: 'Qazaqşa', file: 'kk-Latn.json' },
        { code: 'sr-Cyrl', name: 'Српски', file: 'sr-Cyrl.json' }
      ],
   },
