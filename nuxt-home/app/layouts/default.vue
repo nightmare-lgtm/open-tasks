@@ -152,7 +152,7 @@ section {
 }
 @media(max-width:768px){
   .header{
-    padding: 5px 10px 5px 10px;
+    padding: 10px 10px 10px 10px;
   }
 }
 </style>

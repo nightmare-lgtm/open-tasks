@@ -1,9 +1,12 @@
 <script setup lang ="ts">
+import { isMobile } from '~/composables/helpers/useIsMobile';
 import taskService from '~/services/taskService';
+
 import type { addTaskModel, contactsModel, task } from '~/types/tasks';
 
 const {t} = useI18n()
 const useTaskService = new taskService()
+const isMobileNow = isMobile()
 
 const step = ref(0)
 
@@ -45,7 +48,6 @@ function addTask(){
     emit('addTask',dataAddTaskModel)
 }
 
-
 </script>
 
 <template>
@@ -53,16 +55,29 @@ function addTask(){
 
   </v-stepper>
     <div class="main ">
+         <v-icon 
+          @click="closeModalTask"
+          class="cancel-terminal cancel-mobil"
+          v-if="isMobileNow"
+          >
+            mdi-close-octagon
+          </v-icon>
        <div class="stepper-header">
         <div class="row">
-          <div class="col-xl-11">
+          <div class="col-xl-11 ">
             <div class="stepper-title">
               <h1 class="modal-title">{{ t('addTask.addTaskTitle') }}</h1>
             </div>
           </div>
           <div class="col-xl-1">
           
-            <v-icon @click="closeModalTask" class="cancel-terminal">mdi-close-octagon</v-icon>
+            <v-icon 
+              @click="closeModalTask" 
+              class="cancel-terminal"
+              v-if="!isMobileNow"
+              >
+              mdi-close-octagon
+            </v-icon>
         
           </div>
         </div>
@@ -134,6 +149,7 @@ function addTask(){
   background: linear-gradient(145deg,#2a2f35 0%,#313741 50%,#242830 100%);
   border: 1px solid rgba(218, 112, 214, 0.25);
   box-shadow:0 0 20px rgba(218, 112, 214, 0.15);
+  overflow: auto;
 }
 
 h4 {
@@ -168,22 +184,18 @@ h4 {
 
 }
 
-.btn-local{
-  /* в медиа запросах убрать отступ на маленьких экранах */
+.btn-local {
     width: 15vw;
     margin-left: 8vw;
 }
 
-.btn-cansell{
+.btn-cansell {
     border:none;
     border-radius: 10px;
-    padding: 5px;
-      /* в медиа запросах убрать отступ на маленьких экранах */
     margin-left: -0.5vw;
 }
 
-.stepper-header{
-
+.stepper-header {
     background:#1b2028;
     border:1px solid rgba(90,220,255,.25);
     border-radius:8px;
@@ -194,8 +206,7 @@ h4 {
 
 }
 
-.stepper-title{
-  /* в медиа запросах убрать */
+.stepper-title {
     margin-left: 7vw;
     color:#6de8ff;
     font-size:24px;
@@ -226,25 +237,38 @@ h4 {
 .progress-fill {
     width:50%;
     height:100%;
-    background:linear-gradient(
-        90deg,
-        #00d2ff,
-        #7ef9ff
-    );
-
+    background:linear-gradient( 90deg, #00d2ff,#7ef9ff);
     transition:.35s ease;
-
 }
 
-.progress-fill.full{
-
+.progress-fill.full {
     width:100%;
 }
 
-.cancel-terminal{
+.cancel-terminal {
   color: red !important;
   font-size: 30px;
 }
 
+.cancel-mobil {
+  margin-bottom: 5px;
+ display: flex;
+ margin-left: auto;
+ transform: translate(10px, -15px);
+}
+
+@media(max-width:768px) {
+ .stepper-title {
+    margin-left: 0vw;
+  }
+ .btn-local {
+    margin-left: 0vw;
+    width: 30vw;
+}
+
+ .btn-cansell {
+    margin-left: 0vw;
+  }
+}
 
 </style>
