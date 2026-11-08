@@ -85,6 +85,10 @@ function goToBack(){
         v-model="isShowTaskModal"
         max-width="900"
         opacity="0.7"
+        :style="{ 
+            maxHeight: '100dvh', 
+            margin: '0' 
+        }"
         >
         <AddTask 
           @closeModal="isShowTaskModal=!isShowTaskModal"
