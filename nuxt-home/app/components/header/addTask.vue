@@ -40,6 +40,8 @@ const emit = defineEmits<{
     addTask: [dataAddTaskModel:addTaskModel]
 }>()
 
+
+
 function closeModalTask(){
     emit('closeModal')
 }
@@ -47,6 +49,7 @@ function closeModalTask(){
 function addTask(){
     emit('addTask',dataAddTaskModel)
 }
+
 
 </script>
 
@@ -150,6 +153,7 @@ function addTask(){
   border: 1px solid rgba(218, 112, 214, 0.25);
   box-shadow:0 0 20px rgba(218, 112, 214, 0.15);
   overflow: auto;
+  max-height: 90dvh;
 }
 
 h4 {
