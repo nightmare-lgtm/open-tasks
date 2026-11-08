@@ -45,7 +45,8 @@ function closeModal(){
   position: relative;
   display: flex;
   padding: 20px;
-  width: min(800px, calc(100vw- 40px));
+  width: min(800px, calc(100vw- 
+  40px));
   height: min(400px, calc(100vh - 40px));
   overflow: auto;
   flex-direction: column;
@@ -55,7 +56,7 @@ function closeModal(){
   background-color: #2A2015;
   color:#E0E0E0;
 }
-.warning-footer{
+.warning-footer {
   display: flex;
   justify-content: space-between;
   width: 100%;

@@ -81,7 +81,7 @@ function goToBack(){
     </div>
 
         
-    <v-dialog 
+    <!-- <v-dialog 
         v-model="isShowTaskModal"
         max-width="900"
         opacity="0.7"
@@ -89,12 +89,13 @@ function goToBack(){
             maxHeight: '100dvh', 
             margin: '0' 
         }"
-        >
+        > -->
         <AddTask 
+         v-model="isShowTaskModal"
           @closeModal="isShowTaskModal=!isShowTaskModal"
           @add-task="addTask"
           />
-    </v-dialog>
+    <!-- </v-dialog> -->
 </template>
 <style scoped>
 .default-layout {

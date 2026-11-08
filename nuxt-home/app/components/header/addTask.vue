@@ -4,6 +4,10 @@ import taskService from '~/services/taskService';
 
 import type { addTaskModel, contactsModel, task } from '~/types/tasks';
 
+const props = defineProps<{
+  'modelValue': boolean
+}>()
+
 const {t} = useI18n()
 const useTaskService = new taskService()
 const isMobileNow = isMobile()
@@ -54,10 +58,10 @@ function addTask(){
 </script>
 
 <template>
-  <v-stepper v-model="step">
-
-  </v-stepper>
-    <div class="main ">
+  <div class="add-task-container" v-if="props.modelValue">
+    <div class="add-task-backdrop"></div>
+    <div class="add-task-card">
+       <div class="main ">
          <v-icon 
           @click="closeModalTask"
           class="cancel-terminal cancel-mobil"
@@ -105,7 +109,7 @@ function addTask(){
 
     </div>
     <div v-if="step===0">
-        <div class="add-task-container">
+        <div >
           <h4 class="text-start mt-2">{{ t('addTask.taskName') }}</h4>
           <input type="text" class="add-task-input" v-model="dataAddTaskModel.nameTask">
           <h4 class="text-start mt-2">{{ t('taskCard.taskPayment') }}</h4>
@@ -124,7 +128,7 @@ function addTask(){
     </div>
     
       <div v-if="step===1">
-        <div class="add-task-container">
+        <div >
            <h4 class="text-start mt-2">{{ t('contactModal.phone') }}</h4>
            <input type="text" class="add-task-input" v-model="contaktsModel.phoneNumber">
            <h4 class="text-start mt-2">{{ t('contactModal.telegram') }}</h4>
@@ -141,11 +145,39 @@ function addTask(){
         </div>
     </div>
     </div>
-
+    </div>
+  </div>
 </template>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Russo+One&family=Share+Tech+Mono&family=Tektur:wght@500;600;700&display=swap');
+.add-task-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.add-task-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.add-task-card {
+  z-index: 3;
+  display: flex;
+  width: 100%;
+  height: 90dvh;
+  overflow: auto;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;       
+  overflow-x: hidden;     
+}
 .main {
   text-align: center;
   padding: 20px;
@@ -153,7 +185,7 @@ function addTask(){
   border: 1px solid rgba(218, 112, 214, 0.25);
   box-shadow:0 0 20px rgba(218, 112, 214, 0.15);
   overflow: auto;
-  max-height: 90dvh;
+  width: 60dvw;
 }
 
 h4 {
@@ -262,6 +294,9 @@ h4 {
 }
 
 @media(max-width:768px) {
+  .main {
+    width: 90dvw;
+  }
  .stepper-title {
     margin-left: 0vw;
   }
