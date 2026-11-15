@@ -39,7 +39,7 @@
         "whatsapp": "WatsApp: "
     },
     "addTask": {
-        "addTaskTitle": "Размешение заказа",
+        "addTaskTitle": "Размещение заказа",
         "status": "Статус : Шаг {current} из {total}",
         "informationTask": "Информация о задаче",
         "contactInformation": "Контактная информация",
