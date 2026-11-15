@@ -113,7 +113,7 @@ if(currentTask?.address){
             >
               {{ t('aboutTask.btnTitles.contactCustomer') }}
             </button>
-            <button class="insomnia-btn mt-3" @click="isVisibleConfirm=!isVisibleConfirm">
+            <button class="insomnia-btn btn-connect mt-3" @click="isVisibleConfirm=!isVisibleConfirm">
                {{ t('aboutTask.btnTitles.closeTask') }}
             </button>
           </div>
@@ -196,6 +196,7 @@ if(currentTask?.address){
 
 .btn-connect {
   color: black !important;
+  margin:10px;
 }
 
 .map-container {
@@ -208,7 +209,7 @@ if(currentTask?.address){
 .card-footer {
   display: flex;
   justify-content: space-between;
-  width: 25vw;
+  width: 26vw;
   color:black;
 }
 @media(max-width:768px){
