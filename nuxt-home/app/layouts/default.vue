@@ -79,41 +79,27 @@ function goToBack(){
             </div>
         </footer>
     </div>
-
-        
-    <!-- <v-dialog 
-        v-model="isShowTaskModal"
-        max-width="900"
-        opacity="0.7"
-        :style="{ 
-            maxHeight: '100dvh', 
-            margin: '0' 
-        }"
-        > -->
-        <AddTask 
-         v-model="isShowTaskModal"
-          @closeModal="isShowTaskModal=!isShowTaskModal"
-          @add-task="addTask"
-          />
-    <!-- </v-dialog> -->
+    <AddTask 
+      v-model="isShowTaskModal"
+      @add-task="addTask"
+    />
 </template>
 <style scoped>
 .default-layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 .header {
-    display: flex;
-    align-items:end;
-    padding: 20px;
-    background: rgba(26, 26, 34, 0.85);
-    box-shadow:0 12px 35px rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 240, 255, 0.2); 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    justify-content: space-between; 
+  display: flex;
+  align-items:end;
+  padding: 20px;
+  background: rgba(26, 26, 34, 0.85);
+  box-shadow:0 12px 35px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2); 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  justify-content: space-between; 
 }
 
 main {

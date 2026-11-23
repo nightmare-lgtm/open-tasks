@@ -40,14 +40,23 @@ const dataAddTaskModel = reactive<addTaskModel>({
 
 
 const emit = defineEmits<{
-    closeModal: []
-    addTask: [dataAddTaskModel:addTaskModel]
+  'update:modelValue': [value:boolean]
+   addTask: [dataAddTaskModel:addTaskModel]
 }>()
+
+watch(()=>props.modelValue, (newVal ) => {
+  if(newVal) {
+    document.body.style.overflow = 'hidden'
+  }
+  else {
+    document.body.style.overflow = ''; 
+  }
+})
 
 
 
 function closeModalTask(){
-    emit('closeModal')
+  emit('update:modelValue',false)
 }
 
 function addTask(){
