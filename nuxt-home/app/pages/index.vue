@@ -40,7 +40,7 @@ function openCard(taskNumber:number){
            <div 
              v-for="(titleCard, idx) in allTasks" 
              :key="idx" 
-             class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4" 
+             class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4 h-100 " 
             >
                 <Card
                     :name="titleCard.title"
@@ -58,7 +58,7 @@ function openCard(taskNumber:number){
 <style scoped>
 .main-page {
   background-color: #20232A;  
-    padding: 10px 10px 100px 10px;
+  padding: 10px 10px 100px 10px;
 }
 
 .active-task-head {

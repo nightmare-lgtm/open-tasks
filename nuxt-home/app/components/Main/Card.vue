@@ -33,8 +33,8 @@ function handleClickMore(){
             <span class="bold">{{ t('taskCard.taskLocation') }}</span> {{ props.location }}
         </h6>
     </div>
-    <div class="card-body text-center mt-4">
-        <button class="insomnia-btn" @click="handleClickMore()">{{t('taskCard.taskMore')}}</button>
+    <div class="card-body text-center ">
+        <button class="insomnia-btn btn-more" @click="handleClickMore()">{{t('taskCard.taskMore')}}</button>
     </div>
 
 </div>
@@ -46,10 +46,15 @@ function handleClickMore(){
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;1,400;1,500&display=swap');
 
 .task-card {
+    height: 100%;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
     background: #24242e;
-    height: auto;
-    margin: 20px;
     padding: 15px;
+    margin: 15px;
     border-radius: 16px;
     border: 1px solid rgba(160, 32, 240, 0.3);
     box-shadow: 0 0 20px rgba(100, 200, 255, 0.5);
@@ -68,6 +73,7 @@ h6 {
   transform: skewX(-15deg);
   color: #E0E0E0;
   font-weight: 400;
+    margin: 0; 
 }
 
 .main-head {
@@ -81,8 +87,20 @@ h6 {
   letter-spacing: 0.5px;
 }
 
+.card-title {
+    flex-grow: 1;
+   
+
+}
+
 .bold {
  font-weight: 700;
+}
+
+.card-body{
+    margin-top: auto;
+    text-align: center;
+    padding-top: 15px;
 }
 
 .pin-ico{
