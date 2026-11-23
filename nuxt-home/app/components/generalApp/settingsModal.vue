@@ -9,6 +9,8 @@ const emit = defineEmits<{
    'update:modelValue': [value:boolean]
 }>()
 
+const brightness = ref<number>(100)
+
 function closeModal(){
   emit('update:modelValue',false)
 }
@@ -24,8 +26,10 @@ function closeModal(){
       <button class="close-btn" @click="closeModal">Х</button>
     </div>
     <div class="main-section mt-4">
-      <details>
-        <summary class="lang-summary">{{t('settings.btnTitles.Language')}}</summary>
+      <details class="lang-details">
+        <summary class="lang-summary">
+          <span>{{t('settings.btnTitles.Language')}}</span>
+        </summary>
         <div class="list-lang">
           <!-- сейчас руками добавляю, но для масштабирования лучше список языков 
           и цикл перебора по нему -->
@@ -64,6 +68,12 @@ function closeModal(){
           </button>
         </div>
       </details>
+      <div class="slider-wrapper">
+        <v-slider
+          v-model="brightness"
+        />
+      </div>
+      
     </div>
 
   </div>
@@ -99,6 +109,14 @@ function closeModal(){
   overflow: auto;
 }
 
+.lang-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 .main-header {
   flex:1;
   text-align: center;
@@ -127,12 +145,21 @@ function closeModal(){
   font-size: 1rem; 
 }
 
-.main-section {
+.slider-wrapper {
+  width: 100%;
+  max-width: 500px; 
+  margin: 20px auto 0 auto; 
+}
 
+.main-section {
   display: flex;
   align-items: center;
+  width: 100%;
+  
+
   justify-content: center;
   color: #9a9388;
+  flex-direction: column;
 }
 
 .list-lang {
