@@ -27,10 +27,16 @@ function openCard(taskNumber:number){
     navigateTo(`/about-task/${taskNumber}`)
 }
 
+const currentBackground = useState<number>('background', ()=>210)
+
+const bgStyle = computed(()=>({
+    '--main-bg-color': `hsl(${currentBackground.value},20%,15%)`
+}))
+
 </script>
 
 <template>
-    <div class="main-page container-fluid">
+    <div class="main-page container-fluid" :style="bgStyle">
         <div class="row">
             <div class="col-12">
               <h4 class="text-center active-task-head mt-3">{{ t('mainPage.activeTask') }}</h4>
@@ -57,7 +63,7 @@ function openCard(taskNumber:number){
 
 <style scoped>
 .main-page {
-  background-color: #20232A;  
+  background-color: var(--main-bg-color, #20232A);
   padding: 10px 10px 100px 10px;
 }
 

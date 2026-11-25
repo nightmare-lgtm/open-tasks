@@ -9,18 +9,23 @@ const emit = defineEmits<{
    'update:modelValue': [value:boolean]
 }>()
 
-const brightness = ref<number>(100)
+const currentBackground = useState<number>('background')
 
 function closeModal(){
   emit('update:modelValue',false)
 }
+
+const bgStyle = computed(()=>({
+    '--main-bg-color': `hsl(${currentBackground.value},20%,15%)`
+}))
+
 
 </script>
 
 <template>
  <div class="settings-container" v-if="props.modelValue">
   <div class="settings-backdrop"></div>
-  <div class="settings-content">
+  <div class="settings-content" :style="bgStyle">
     <div class="settings-content-header">
       <h1 class="main-header">{{ t('settings.settingsTitle') }}</h1>
       <button class="close-btn" @click="closeModal">Х</button>
@@ -70,7 +75,10 @@ function closeModal(){
       </details>
       <div class="slider-wrapper">
         <v-slider
-          v-model="brightness"
+          :min="0"
+          :max="360"
+          :step="1"
+          v-model="currentBackground"
         />
       </div>
       
@@ -100,7 +108,7 @@ function closeModal(){
 .settings-content {
   position: relative;
   z-index: 1;
-  background: #16161a;
+  background: var(--main-bg-color);
   padding:20px;
   border: 1px solid rgba(0, 240, 255, 0.3); 
   width: min(800px, calc(100vw - 40px));
