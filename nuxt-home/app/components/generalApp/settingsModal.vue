@@ -1,5 +1,8 @@
 <script setup lang ="ts">
+import { useColorBackground } from '~/composables/general/useSettingsApp';
+
 const { locale, setLocale, t } = useI18n()
+const {bgStyle, currentBackground} = useColorBackground()
 
 const props = defineProps<{
   modelValue: boolean
@@ -9,15 +12,11 @@ const emit = defineEmits<{
    'update:modelValue': [value:boolean]
 }>()
 
-const currentBackground = useState<number>('background')
 
 function closeModal(){
   emit('update:modelValue',false)
 }
 
-const bgStyle = computed(()=>({
-    '--main-bg-color': `hsl(${currentBackground.value},20%,15%)`
-}))
 
 
 </script>

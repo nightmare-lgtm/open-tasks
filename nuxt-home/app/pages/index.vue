@@ -1,5 +1,7 @@
 <script  setup lang="ts">
 const { t } = useI18n()
+const {bgStyle} = useColorBackground()
+
 definePageMeta({
     layout: 'default'
 })
@@ -7,6 +9,7 @@ definePageMeta({
 import Card from '~/components/Main/Card.vue'
 import taskService from '../services/taskService'
 import type { task } from '~/types/tasks'
+import { useColorBackground } from '~/composables/general/useSettingsApp'
 
 
 const useTaskService = new taskService()
@@ -27,11 +30,6 @@ function openCard(taskNumber:number){
     navigateTo(`/about-task/${taskNumber}`)
 }
 
-const currentBackground = useState<number>('background', ()=>210)
-
-const bgStyle = computed(()=>({
-    '--main-bg-color': `hsl(${currentBackground.value},20%,15%)`
-}))
 
 </script>
 
