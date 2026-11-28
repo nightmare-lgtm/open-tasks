@@ -2,7 +2,7 @@
 import { useColorBackground } from '~/composables/general/useSettingsApp';
 
 const { locale, setLocale, t } = useI18n()
-const {bgStyle, currentBackground} = useColorBackground()
+const {bgStyle, currentBackground, isDefault} = useColorBackground()
 
 const props = defineProps<{
   modelValue: boolean
@@ -24,15 +24,15 @@ function closeModal(){
 <template>
  <div class="settings-container" v-if="props.modelValue">
   <div class="settings-backdrop"></div>
-  <div class="settings-content" :style="bgStyle">
+  <div class="settings-content" :style="bgStyle" >
     <div class="settings-content-header">
-      <h1 class="main-header">{{ t('settings.settingsTitle') }}</h1>
+      <h1 class="main-header" :class="{noDefault: !isDefault}">{{ t('settings.settingsTitle') }}</h1>
       <button class="close-btn" @click="closeModal">Х</button>
     </div>
     <div class="main-section mt-4">
       <details class="lang-details">
-        <summary class="lang-summary">
-          <span>{{t('settings.btnTitles.Language')}}</span>
+        <summary class="lang-summary" :class="{ noDefault: !isDefault }">
+          <span>{{ t('settings.btnTitles.Language') }}</span>
         </summary>
         <div class="list-lang">
           <!-- сейчас руками добавляю, но для масштабирования лучше список языков 
@@ -88,6 +88,8 @@ function closeModal(){
 </template>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Russo+One&family=Share+Tech+Mono&family=Tektur:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600&family=Oswald:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 .settings-container {
   position: fixed;
   inset: 0;
@@ -125,6 +127,8 @@ function closeModal(){
 
 
 .main-header {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 2px;
   flex:1;
   text-align: center;
   margin: 0;
@@ -158,6 +162,21 @@ function closeModal(){
   margin: 20px auto 0 auto; 
 }
 
+.slider-wrapper :deep(.v-slider-track__background) {
+ background: linear-gradient(to right, 
+  hsl(0, 60%, 75%), 
+  hsl(60, 60%, 75%), 
+  hsl(120, 60%, 75%), 
+  hsl(180, 60%, 75%), 
+  hsl(240, 60%, 75%), 
+  hsl(300, 60%, 75%), 
+  hsl(360, 0%, 75%)
+  ) !important;
+  opacity: 1 !important;
+  height: 8px !important; 
+  border-radius: 4px;
+}
+
 .main-section {
   display: flex;
   align-items: center;
@@ -176,6 +195,7 @@ function closeModal(){
 }
 .lang-summary {
   font-size: 1.5rem;
+  font-family: 'Pirata One', cursive;
 }
 
 .lang-btn {
@@ -190,6 +210,45 @@ function closeModal(){
 
 .icon-country {
   font-size: 0.8rem;
+}
+
+.lang-summary::-webkit-details-marker {
+  display: none;
+}
+.lang-summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 0;
+  outline: none;
+}
+
+
+.lang-summary::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid #9a9388;
+  transition: transform 0.2s ease, border-left-color 0.2s ease;
+}
+
+details[open] .lang-summary::before {
+  transform: rotate(90deg);
+}
+
+.lang-summary.noDefault::before {
+  border-left-color: black;
+}
+
+.noDefault {
+  color:black
 }
 
 </style>

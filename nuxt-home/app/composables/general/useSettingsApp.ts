@@ -9,17 +9,18 @@
 
 export function useColorBackground() {
     const currentBackground = useState<number>('background', () => 210)
+    const isDefault = computed(()=>currentBackground.value==210)
     const bgStyle = computed(() => {
         const h = currentBackground.value
-        const isDeafult = h == 210
-        const ligtness = isDeafult? 15 : 40
-        const saturation = isDeafult? 20 :75
+        const ligtness = isDefault? 15 : 40
+        const saturation = isDefault? 20 :75
         return {
             '--main-bg-color': `hsl(${h},${ligtness}%,${saturation}%)`
         }
     })
     return {
         bgStyle,
-        currentBackground
+        currentBackground,
+        isDefault
     }
 }
