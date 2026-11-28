@@ -195,7 +195,6 @@ function closeModal(){
 }
 .lang-summary {
   font-size: 1.5rem;
-  font-family: 'Pirata One', cursive;
 }
 
 .lang-btn {
